@@ -1,6 +1,5 @@
-import chardet
+import pandas as pd
 
-with open('./datas/namsan_library_popular_books_2023_05.csv', mode='rb') as f:
-    read_line = f.readline()
-    encoding_detect = chardet.detect(read_line)
-    print(encoding_detect)
+df = pd.read_csv('./datas/namsan_library_popular_books_2023_05.csv', encoding='EUC_KR', low_memory=False)
+print(df.head())
+print(df)
